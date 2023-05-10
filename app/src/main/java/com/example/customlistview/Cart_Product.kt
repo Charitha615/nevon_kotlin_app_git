@@ -1,15 +1,15 @@
 package com.example.customlistview
 
 import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.util.Log
 import android.widget.Button
-import android.content.Intent
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import android.content.Intent
+import android.os.Bundle
 
 class Cart_Product : AppCompatActivity() {
 
@@ -28,11 +28,16 @@ class Cart_Product : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart_product)
 
+        val bundle: Bundle? = intent.extras
+        val id = bundle?.get("itemID")
+
+        edName = findViewById(R.id.eName);
+
 //        val intent = this.intent
 //        val ItemID = intent.getStringExtra("itemID")
 //
-//        edName.setText(ItemID)
 
+//        edName.text(id)
         initView()
         initRecyclerView()
 

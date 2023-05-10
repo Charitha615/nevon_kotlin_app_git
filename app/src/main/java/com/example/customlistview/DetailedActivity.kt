@@ -5,11 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import com.example.customlistview.databinding.ActivityDetailedBinding
 
 class DetailedActivity : AppCompatActivity() {
 
-    private lateinit var btnAdd : Button
+    private lateinit var add_to_cart_btn : Button
     private lateinit var ItemID : TextView
     private lateinit var binding: ActivityDetailedBinding
 
@@ -30,10 +31,11 @@ class DetailedActivity : AppCompatActivity() {
 //            binding.detailIngredients.setText(ingredients)
             binding.detailImage.setImageResource(image)
         }
-        btnAdd = findViewById(R.id.add_to_cart_btn);
+        add_to_cart_btn = findViewById(R.id.add_to_cart_btn);
         ItemID = findViewById(R.id.itemID);
 
-        btnAdd.setOnClickListener {
+        add_to_cart_btn.setOnClickListener {
+            Toast.makeText(this,ItemID.text, Toast.LENGTH_SHORT).show()
             val intent = Intent(this, Cart_Product::class.java)
             intent.putExtra("itemID",ItemID.text)
             startActivity(intent)
