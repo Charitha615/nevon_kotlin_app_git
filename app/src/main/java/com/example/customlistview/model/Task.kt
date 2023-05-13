@@ -1,4 +1,4 @@
-package com.example.todolist.model
+package com.example.customlistview.model
 
 data class Task(
     val title: String,

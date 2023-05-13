@@ -1,4 +1,4 @@
-package com.example.todolist.ui
+package com.example.customlistview.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.customlistview.R
 import com.example.customlistview.databinding.ItemTaskBinding
-import com.example.todolist.model.Task
+import com.example.customlistview.model.Task
 
 class TaskListAdapter : ListAdapter<Task, TaskListAdapter.TaskViewHolder>(DiffCallback()) {
 
