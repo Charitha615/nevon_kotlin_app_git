@@ -42,7 +42,7 @@ class home_page : AppCompatActivity() {
             startActivity(intent)
         }
         AppoinmntBtn.setOnClickListener {
-            val intent = Intent(this, "ui/MainActivity"::class.java)
+            val intent = Intent(this, AppoinmetMain::class.java)
             startActivity(intent)
         }
 
