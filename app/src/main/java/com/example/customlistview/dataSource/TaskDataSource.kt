@@ -1,6 +1,6 @@
-package com.example.todolist.dataSource
+package com.example.customlistview.dataSource
 
-import com.example.todolist.model.Task
+import com.example.customlistview.model.Task
 
 object TaskDataSource {
     private val list = arrayListOf<Task>()

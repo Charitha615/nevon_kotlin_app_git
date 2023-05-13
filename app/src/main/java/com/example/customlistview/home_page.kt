@@ -24,6 +24,8 @@ class home_page : AppCompatActivity() {
         val user_email = findViewById<TextView>(R.id.textView2)
         val allProductButton = findViewById<Button>(R.id.all_product_button)
         val HairDesignBtns = findViewById<Button>(R.id.HairDesignBtn)
+        val profileBtn = findViewById<Button>(R.id.profileBtn)
+        val AppoinmntBtn = findViewById<Button>(R.id.AppoinmntBtn)
         user_email.setText(email)
 
 
@@ -33,6 +35,14 @@ class home_page : AppCompatActivity() {
         }
         HairDesignBtns.setOnClickListener {
             val intent = Intent(this, Hair_Styles_Men::class.java)
+            startActivity(intent)
+        }
+        profileBtn.setOnClickListener {
+            val intent = Intent(this, Hair_Styles_Men::class.java)
+            startActivity(intent)
+        }
+        AppoinmntBtn.setOnClickListener {
+            val intent = Intent(this, "ui/MainActivity"::class.java)
             startActivity(intent)
         }
 

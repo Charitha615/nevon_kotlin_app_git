@@ -1,4 +1,4 @@
-package com.example.customlistview.ui
+package com.example.customlistview
 
 import android.app.Activity
 import android.content.Intent
@@ -6,11 +6,12 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.customlistview.databinding.UiMainApoinmentBinding
-import com.example.todolist.dataSource.TaskDataSource
-import com.example.todolist.ui.TaskListAdapter
+import com.example.customlistview.dataSource.TaskDataSource
+import com.example.customlistview.ui.AddTaskActivity
+import com.example.customlistview.ui.TaskListAdapter
 
 @Suppress("DEPRECATION")
-class MainActivity : AppCompatActivity() {
+class AppoinmetMain : AppCompatActivity() {
     private lateinit var binding: UiMainApoinmentBinding
     private val adapter by lazy { TaskListAdapter() }
 
