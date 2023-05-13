@@ -8,7 +8,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import android.content.Intent
 import android.os.Bundle
 
 class Cart_Product : AppCompatActivity() {
@@ -28,16 +27,15 @@ class Cart_Product : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart_product)
 
-        val bundle: Bundle? = intent.extras
-        val id = bundle?.get("itemID")
+        val ItemID = intent.getStringExtra("itemID")
+        val itemPrice = intent.getStringExtra("itemPrice")
 
-        edName = findViewById(R.id.eName);
+        val editText = findViewById<EditText>(R.id.eName).apply {
+            setText(ItemID)
+        }
 
-//        val intent = this.intent
-//        val ItemID = intent.getStringExtra("itemID")
-//
 
-//        edName.text(id)
+        getItemID()
         initView()
         initRecyclerView()
 
@@ -60,6 +58,11 @@ class Cart_Product : AppCompatActivity() {
         adapter?. setOnClickDeleteItem {
             deleteStudent(it.id)
         }
+    }
+
+    private fun getItemID() {
+        edName = findViewById(R.id.eName)
+
     }
 
     private fun updateStudent() {
@@ -99,6 +102,8 @@ class Cart_Product : AppCompatActivity() {
         var name = edName.text.toString()
         var email = edEmail.text.toString()
 
+
+
         if(name.isEmpty() || email.isEmpty()){
             Toast.makeText(this,"Please enter requried field", Toast.LENGTH_SHORT).show()
         }else{
@@ -107,7 +112,7 @@ class Cart_Product : AppCompatActivity() {
             // Check insert success or not
 
             if(status > -1){
-                Toast.makeText(this,"Student Added.....", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Item Added.....", Toast.LENGTH_SHORT).show()
                 clearEditText()
             }else{
                 Toast.makeText(this,"Record not saved!..", Toast.LENGTH_SHORT).show()
