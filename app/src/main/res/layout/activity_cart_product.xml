@@ -18,10 +18,12 @@
 
     <EditText
         android:id="@+id/eName"
+        android:editable="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:hint="Item ID"/>
+        android:hint="Item ID"
+        tools:ignore="Deprecated" />
 
     <EditText
         android:id="@+id/eEmail"
@@ -69,11 +71,11 @@
         android:layout_margin="20dp"
         android:text="Total amount: Rs"/>
         <TextView
-            android:id="@+id/amount_tot"
+            android:id="@+id/amount_tot_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
           android:layout_marginTop="20dp"
-            android:text="100"/>
+            android:text="0"/>
     </LinearLayout>
 
 
