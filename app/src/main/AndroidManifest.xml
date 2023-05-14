@@ -43,6 +43,9 @@
             android:name=".signup_page"
             android:exported="false" />
         <activity
+            android:name=".HairDesignAddToCart"
+            android:exported="false" />
+        <activity
             android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>

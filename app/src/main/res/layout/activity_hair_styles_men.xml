@@ -50,6 +50,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/MenStyle01"
                     android:layout_width="88dp"
                     android:layout_height="88dp"
                     android:layout_gravity="center_horizontal"
@@ -85,7 +86,10 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center">
-                <ImageView android:layout_width="88dp"
+
+                <ImageView
+                    android:id="@+id/MenStyle02"
+                    android:layout_width="88dp"
                     android:layout_height="88dp"
                     android:src="@drawable/ms2"
                     android:layout_gravity="center_horizontal"/>
@@ -120,7 +124,9 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center">
-                <ImageView android:layout_width="88dp"
+                <ImageView
+                    android:id="@+id/MenStyle03"
+                    android:layout_width="88dp"
                     android:layout_height="88dp"
                     android:src="@drawable/ms3"
                     android:layout_gravity="center_horizontal"/>
@@ -154,7 +160,9 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center">
-                <ImageView android:layout_width="88dp"
+                <ImageView
+                    android:id="@+id/MenStyle04"
+                    android:layout_width="88dp"
                     android:layout_height="88dp"
                     android:src="@drawable/ms4"
                     android:layout_gravity="center_horizontal"/>
@@ -188,7 +196,9 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center">
-                <ImageView android:layout_width="88dp"
+                <ImageView
+                    android:id="@+id/MenStyle05"
+                    android:layout_width="88dp"
                     android:layout_height="88dp"
                     android:src="@drawable/ms5"
                     android:layout_gravity="center_horizontal"/>
@@ -222,7 +232,9 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center">
-                <ImageView android:layout_width="88dp"
+                <ImageView
+                    android:id="@+id/MenStyle06"
+                    android:layout_width="88dp"
                     android:layout_height="88dp"
                     android:src="@drawable/ms6"
                     android:layout_gravity="center_horizontal"/>
