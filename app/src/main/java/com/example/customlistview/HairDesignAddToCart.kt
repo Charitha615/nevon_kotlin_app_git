@@ -29,7 +29,7 @@ class HairDesignAddToCart : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.hair_design_add_to_cart)
-        
+
 
         GetStyleAmount()
         initView()
@@ -90,7 +90,7 @@ class HairDesignAddToCart : AppCompatActivity() {
             setText(styleID)
         }
         val editTextAmount = findViewById<EditText>(R.id.eEmail01).apply {
-            setText(StylePrice)
+            setText("Rs. "+StylePrice)
         }
     }
 
