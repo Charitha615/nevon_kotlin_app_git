@@ -27,7 +27,6 @@ class Hair_Styles_Women : AppCompatActivity() {
             startActivity(intent)
         }
 
-
         WomenStyle01.setOnClickListener {
 //            Toast.makeText(this,ItemID.text, Toast.LENGTH_SHORT).show()
             val intent = Intent(this, HairDesignAddToCart::class.java)
