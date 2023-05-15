@@ -12,26 +12,26 @@ class SQLiteHelper(context: Context) :  SQLiteOpenHelper(context, DATABASE_NAME,
 
     companion object {
         private const val DATABASE_VERSION = 1
-        private const val DATABASE_NAME = "student.db"
-        private const val TBL_STUDENT = "tbl_student"
+        private const val DATABASE_NAME = "cart.db"
+        private const val TBL_Cart = "tbl_cart"
         private const val ID = "id"
         private const val NAME = "name"
         private const val EMAIL = "email"
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
-        val createTblStudent = ("CREATE TABLE "+ TBL_STUDENT + "("
+        val createTblStudent = ("CREATE TABLE "+ TBL_Cart + "("
                 + ID + " INTEGER PRIMARY KEY," + NAME+ " TEXT,"
                 + EMAIL + " TEXT"+ ")")
         db?.execSQL(createTblStudent)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, p1: Int, p2: Int) {
-        db!!.execSQL("DROP TABLE IF EXISTS $TBL_STUDENT")
+        db!!.execSQL("DROP TABLE IF EXISTS $TBL_Cart")
         onCreate(db)
     }
 
-    fun insertStudent(std: CartModel): Long{
+    fun insertCart(std: CartModel): Long{
         val db = this.writableDatabase
 
         val contentValues = ContentValues()
@@ -39,15 +39,15 @@ class SQLiteHelper(context: Context) :  SQLiteOpenHelper(context, DATABASE_NAME,
         contentValues.put(NAME,std.name)
         contentValues.put(EMAIL,std.email)
 
-        val success = db.insert(TBL_STUDENT, null, contentValues)
+        val success = db.insert(TBL_Cart, null, contentValues)
         db.close()
         return success
     }
 
     @SuppressLint("Range")
-    fun getAllStudent():ArrayList<CartModel>{
+    fun getAllCarts():ArrayList<CartModel>{
         val stdList : ArrayList<CartModel> = ArrayList()
-        val selectQuery = "SELECT * FROM $TBL_STUDENT"
+        val selectQuery = "SELECT * FROM $TBL_Cart"
         val db = this.readableDatabase
 
         val cursor: Cursor?
@@ -76,7 +76,7 @@ class SQLiteHelper(context: Context) :  SQLiteOpenHelper(context, DATABASE_NAME,
         }
         return stdList
     }
-    fun updateStudent(std: CartModel):Int {
+    fun updateCart(std: CartModel):Int {
         val db = this.writableDatabase
 
         val contentValues = ContentValues()
@@ -84,17 +84,17 @@ class SQLiteHelper(context: Context) :  SQLiteOpenHelper(context, DATABASE_NAME,
         contentValues.put(NAME,std.name)
         contentValues.put(EMAIL,std.email)
 
-        val sucess = db.update(TBL_STUDENT,contentValues,"id=" + std.id,null)
+        val sucess = db.update(TBL_Cart,contentValues,"id=" + std.id,null)
         db.close()
         return sucess
     }
 
-    fun deleteStudentById(id:Int): Int {
+    fun deleteCartById(id:Int): Int {
         val db = this.writableDatabase
 
         val contentValues = ContentValues()
         contentValues.put(ID, id)
-        val success = db.delete(TBL_STUDENT, "id=$id",null)
+        val success = db.delete(TBL_Cart, "id=$id",null)
         db.close()
         return success
     }

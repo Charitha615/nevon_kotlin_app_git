@@ -41,9 +41,9 @@ class Cart_Product : AppCompatActivity() {
 
         sqLiteHelper = SQLiteHelper(this)
 
-        btnAdd.setOnClickListener{addStudent()}
-        btnView.setOnClickListener{getStudent()}
-        btnUpdate.setOnClickListener{updateStudent()}
+        btnAdd.setOnClickListener{addCart()}
+        btnView.setOnClickListener{getCart()}
+        btnUpdate.setOnClickListener{updateCart()}
 
 
         adapter?.setOnClickItem {
@@ -56,7 +56,7 @@ class Cart_Product : AppCompatActivity() {
         }
 
         adapter?. setOnClickDeleteItem {
-            deleteStudent(it.id)
+            deleteCart(it.id)
         }
     }
 
@@ -65,7 +65,7 @@ class Cart_Product : AppCompatActivity() {
 
     }
 
-    private fun updateStudent() {
+    private fun updateCart() {
         var name = edName.text.toString()
         var email = edEmail.text.toString()
 
@@ -78,19 +78,19 @@ class Cart_Product : AppCompatActivity() {
         if (std == null)return
 
         val std = CartModel(id = std!!.id, name = name, email=email)
-        val status = sqLiteHelper.updateStudent(std)
+        val status = sqLiteHelper.updateCart(std)
         if(status > -1){
 
             clearEditText()
-            getStudent()
+            getCart()
         }else{
             Toast.makeText(this,"Update Failed.....", Toast.LENGTH_SHORT).show()
 
         }
     }
 
-    private fun getStudent() {
-        val stdList = sqLiteHelper.getAllStudent()
+    private fun getCart() {
+        val stdList = sqLiteHelper.getAllCarts()
         Log.e("pppp","${stdList.size}")
 
         //
@@ -98,7 +98,7 @@ class Cart_Product : AppCompatActivity() {
         adapter?.addItems(stdList)
     }
 
-    private fun addStudent() {
+    private fun addCart() {
         var name = edName.text.toString()
         var email = edEmail.text.toString()
 
@@ -108,7 +108,7 @@ class Cart_Product : AppCompatActivity() {
             Toast.makeText(this,"Please enter requried field", Toast.LENGTH_SHORT).show()
         }else{
             val std = CartModel(name = name , email = email)
-            val status = sqLiteHelper.insertStudent(std)
+            val status = sqLiteHelper.insertCart(std)
             // Check insert success or not
 
             if(status > -1){
@@ -121,13 +121,13 @@ class Cart_Product : AppCompatActivity() {
         }
     }
 
-    private fun deleteStudent(id: Int){
+    private fun deleteCart(id: Int){
         val builder = AlertDialog.Builder(this)
         builder.setMessage("Are you sure you want to delete item? ")
         builder.setCancelable(true)
         builder.setPositiveButton("Yes"){ dialog, _ ->
-            sqLiteHelper.deleteStudentById(id)
-            getStudent()
+            sqLiteHelper.deleteCartById(id)
+            getCart()
             dialog.dismiss()
         }
         builder.setNegativeButton("No"){ dialog, _ ->

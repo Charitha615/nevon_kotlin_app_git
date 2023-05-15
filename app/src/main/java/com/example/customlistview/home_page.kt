@@ -48,9 +48,4 @@ class home_page : AppCompatActivity() {
 
     }
 
-//    private fun getStudent() {
-//        val stdList = dbHelper.getAllStudent()
-//        Log.e("pppp","${stdList}")
-//
-//    }
 }

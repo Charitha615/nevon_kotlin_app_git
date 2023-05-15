@@ -69,13 +69,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:text="Total amount: Rs"/>
+        android:text="Your cart products"/>
         <TextView
             android:id="@+id/amount_tot_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
           android:layout_marginTop="20dp"
-            android:text="0"/>
+            android:text=""/>
     </LinearLayout>
 
 

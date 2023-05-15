@@ -31,7 +31,7 @@ class HairDesignSQLiteHelper(context: Context) :  SQLiteOpenHelper(context, DATA
         onCreate(db)
     }
 
-    fun insertStudent(std: HairDesignModel): Long{
+    fun insertHairDesignCart(std: HairDesignModel): Long{
         val db = this.writableDatabase
 
         val contentValues = ContentValues()
@@ -45,7 +45,7 @@ class HairDesignSQLiteHelper(context: Context) :  SQLiteOpenHelper(context, DATA
     }
 
     @SuppressLint("Range")
-    fun getAllStudent():ArrayList<HairDesignModel>{
+    fun getAllHairDesignCart():ArrayList<HairDesignModel>{
         val stdList : ArrayList<HairDesignModel> = ArrayList()
         val selectQuery = "SELECT * FROM $TBL_STUDENT"
         val db = this.readableDatabase
@@ -76,7 +76,7 @@ class HairDesignSQLiteHelper(context: Context) :  SQLiteOpenHelper(context, DATA
         }
         return stdList
     }
-    fun updateStudent(std: HairDesignModel):Int {
+    fun updateHairDesignCart(std: HairDesignModel):Int {
         val db = this.writableDatabase
 
         val contentValues = ContentValues()
@@ -89,7 +89,7 @@ class HairDesignSQLiteHelper(context: Context) :  SQLiteOpenHelper(context, DATA
         return sucess
     }
 
-    fun deleteStudentById(id:Int): Int {
+    fun HairDesignCartById(id:Int): Int {
         val db = this.writableDatabase
 
         val contentValues = ContentValues()

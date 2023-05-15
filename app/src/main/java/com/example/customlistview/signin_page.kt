@@ -34,7 +34,6 @@ class signin_page : AppCompatActivity() {
             loadingBar!!.setTitle("Sign In")
             loadingBar!!.setMessage("Please wait we are checking your credentials..")
             loadingBar!!.setCanceledOnTouchOutside(true)
-
             loadingBar!!.show()
 
 //            val intent = Intent(this, home_page::class.java)
@@ -52,8 +51,6 @@ class signin_page : AppCompatActivity() {
                     val intent = Intent(this, home_page::class.java)
                     intent.putExtra("email", useremail)
                     startActivity(intent)
-
-
                 }
                 else{
                     Toast.makeText(this,"Wrong User name or Password",Toast.LENGTH_LONG).show()
