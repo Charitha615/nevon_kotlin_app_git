@@ -37,28 +37,28 @@ class signin_page : AppCompatActivity() {
 
             loadingBar!!.show()
 
-            val intent = Intent(this, home_page::class.java)
+//            val intent = Intent(this, home_page::class.java)
+//                    intent.putExtra("email", useremail)
+//                    startActivity(intent)
+
+            if (TextUtils.isEmpty(useremail) || TextUtils.isEmpty(userpass)){
+                Toast.makeText(this,"Not accept empty fields", Toast.LENGTH_LONG).show()
+
+            }
+            else{
+                val checkuser = dbHelper.checkuserpass(useremail,userpass)
+                if(checkuser == true){
+                    Toast.makeText(this,"Login Success",Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, home_page::class.java)
                     intent.putExtra("email", useremail)
                     startActivity(intent)
 
-//            if (TextUtils.isEmpty(useremail) || TextUtils.isEmpty(userpass)){
-//                Toast.makeText(this,"Not accept empty fields", Toast.LENGTH_LONG).show()
-//
-//            }
-//            else{
-//                val checkuser = dbHelper.checkuserpass(useremail,userpass)
-//                if(checkuser == true){
-//                    Toast.makeText(this,"Login Success",Toast.LENGTH_SHORT).show()
-//                    val intent = Intent(this, home_page::class.java)
-//                    intent.putExtra("email", useremail)
-//                    startActivity(intent)
-//
-//
-//                }
-//                else{
-//                    Toast.makeText(this,"Wrong User name or Password",Toast.LENGTH_LONG).show()
-//                }
-//            }
+
+                }
+                else{
+                    Toast.makeText(this,"Wrong User name or Password",Toast.LENGTH_LONG).show()
+                }
+            }
         }
 
         user_sign.setOnClickListener {

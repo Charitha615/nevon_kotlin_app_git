@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".Profile"
     android:background="#ececec">
     <ScrollView
         android:layout_width="match_parent"
@@ -42,7 +42,7 @@
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Lion Fischer"
+                    android:text=""
                     android:layout_marginTop="16dp"
                     android:textSize="25sp"
                     android:textStyle="bold"
