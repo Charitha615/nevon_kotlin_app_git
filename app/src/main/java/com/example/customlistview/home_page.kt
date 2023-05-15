@@ -38,7 +38,7 @@ class home_page : AppCompatActivity() {
             startActivity(intent)
         }
         profileBtn.setOnClickListener {
-            val intent = Intent(this, Hair_Styles_Men::class.java)
+            val intent = Intent(this, Profile::class.java)
             startActivity(intent)
         }
         AppoinmntBtn.setOnClickListener {
@@ -48,9 +48,4 @@ class home_page : AppCompatActivity() {
 
     }
 
-//    private fun getStudent() {
-//        val stdList = dbHelper.getAllStudent()
-//        Log.e("pppp","${stdList}")
-//
-//    }
 }

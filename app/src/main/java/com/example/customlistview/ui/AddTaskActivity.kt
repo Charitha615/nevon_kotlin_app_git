@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.customlistview.databinding.ActivityAddTaskBinding
 import com.example.customlistview.dataSource.TaskDataSource
-//import com.example.customlistview.databinding.ActivityAddTaskBinding
 import com.example.customlistview.extensions.format
 import com.example.customlistview.extensions.text
 import com.example.customlistview.model.Task

@@ -29,7 +29,7 @@ class HairDesignAddToCart : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.hair_design_add_to_cart)
-        
+
 
         GetStyleAmount()
         initView()
@@ -37,9 +37,9 @@ class HairDesignAddToCart : AppCompatActivity() {
 
         sqLiteHelper = HairDesignSQLiteHelper(this)
 
-        btnAdd.setOnClickListener{addStudent()}
-        btnView.setOnClickListener{getStudent()}
-        btnUpdate.setOnClickListener{updateStudent()}
+        btnAdd.setOnClickListener{addHairDesignCart()}
+        btnView.setOnClickListener{getHairDesignCart()}
+        btnUpdate.setOnClickListener{updateHairDesignCart()}
 
         appoinBTN.setOnClickListener {
             val intent = Intent(this, AppoinmetMain::class.java)
@@ -57,7 +57,7 @@ class HairDesignAddToCart : AppCompatActivity() {
         }
 
         adapter?. setOnClickDeleteItem {
-            deleteStudent(it.id)
+            deleteHairDesignCart(it.id)
         }
     }
 
@@ -90,11 +90,11 @@ class HairDesignAddToCart : AppCompatActivity() {
             setText(styleID)
         }
         val editTextAmount = findViewById<EditText>(R.id.eEmail01).apply {
-            setText(StylePrice)
+            setText("Rs. "+StylePrice)
         }
     }
 
-    private fun updateStudent() {
+    private fun updateHairDesignCart() {
         var name = edName.text.toString()
         var email = edEmail.text.toString()
 
@@ -107,19 +107,19 @@ class HairDesignAddToCart : AppCompatActivity() {
         if (std == null)return
 
         val std = HairDesignModel(id = std!!.id, name = name, email=email)
-        val status = sqLiteHelper.updateStudent(std)
+        val status = sqLiteHelper.updateHairDesignCart(std)
         if(status > -1){
 
             clearEditText()
-            getStudent()
+            getHairDesignCart()
         }else{
             Toast.makeText(this,"Update Failed.....",Toast.LENGTH_SHORT).show()
 
         }
     }
 
-    private fun getStudent() {
-        val stdList = sqLiteHelper.getAllStudent()
+    private fun getHairDesignCart() {
+        val stdList = sqLiteHelper.getAllHairDesignCart()
         Log.e("pppp","${stdList.size}")
 
         //
@@ -127,7 +127,7 @@ class HairDesignAddToCart : AppCompatActivity() {
         adapter?.addItems(stdList)
     }
 
-    private fun addStudent() {
+    private fun addHairDesignCart() {
         var name = edName.text.toString()
         var email = edEmail.text.toString()
 
@@ -135,7 +135,7 @@ class HairDesignAddToCart : AppCompatActivity() {
             Toast.makeText(this,"Please enter requried field",Toast.LENGTH_SHORT).show()
         }else{
             val std = HairDesignModel(name = name , email = email)
-            val status = sqLiteHelper.insertStudent(std)
+            val status = sqLiteHelper.insertHairDesignCart(std)
             // Check insert success or not
 
             if(status > -1){
@@ -148,13 +148,13 @@ class HairDesignAddToCart : AppCompatActivity() {
         }
     }
 
-    private fun deleteStudent(id: Int){
+    private fun deleteHairDesignCart(id: Int){
         val builder = AlertDialog.Builder(this)
         builder.setMessage("Are you sure you want to delete item? ")
         builder.setCancelable(true)
         builder.setPositiveButton("Yes"){ dialog, _ ->
-            sqLiteHelper.deleteStudentById(id)
-            getStudent()
+            sqLiteHelper.HairDesignCartById(id)
+            getHairDesignCart()
             dialog.dismiss()
         }
         builder.setNegativeButton("No"){ dialog, _ ->
